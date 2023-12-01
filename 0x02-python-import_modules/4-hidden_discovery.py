@@ -1,14 +1,9 @@
 #!/usr/bin/python3
 
-import py_compile
-import dis
+if __name__ == "__main__":
+    import hidden_4
 
-code_object = py_compile.compile('hindden_4.py')
-
-dis.dis(code_object)
-
-names = [name for name in code_object.co_names if not name.startswtich('--')]
-names.sort()
-
-for name in names:
-    print(name)
+    names = dir(hidden_4)
+    for name in names:
+        if name[0] != '-' and name[1] != '-':
+            print(name)
